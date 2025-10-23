@@ -11,17 +11,32 @@ import TodoInput from "./components/TodoInput.vue";
 import TodoList from "./components/TodoList.vue";
 
 export default {
-  components: {},
+  components: { TodoInput, TodoList },
+  data() {
+    return {
+      todos: [],
+    };
+  },
+  methods: {
+    addTodo(newTodoText) {
+      this.todos.push({
+        id: Date.now(),
+        content: newTodoText,
+      });
+    },
+    deleteTodo(id) {
+      this.todos = this.todos.filter((todo) => todo.id !== id);
+      // 새로운 배열을 필터링해서 생성 -> 조건에 맞지 않는 요소들만 남김
+    },
+  },
 };
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.container {
+  max-width: 400px;
+  margin: 50px auto;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: "Noto Sans KR", sans-serif;
 }
 </style>
