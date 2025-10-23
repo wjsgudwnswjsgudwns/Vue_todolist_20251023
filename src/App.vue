@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
     <h1>Todo List</h1>
     <TodoInput @add-todo="addTodo" />
     <TodoList :todos="todos" @delete-todo="deleteTodo" />
@@ -38,5 +38,7 @@ export default {
   margin: 50px auto;
   text-align: center;
   font-family: "Noto Sans KR", sans-serif;
+  background-color: rgb(230, 255, 246);
+  border-radius: 8px;
 }
 </style>

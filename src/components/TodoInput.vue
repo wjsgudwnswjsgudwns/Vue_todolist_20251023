@@ -41,6 +41,7 @@ export default {
 .todo-input input {
   flex: 1;
   padding: 8px;
+  border-radius: 8px;
 }
 button {
   padding: 8px 16px;
@@ -48,6 +49,7 @@ button {
   color: white;
   border: none;
   cursor: pointer;
+  border-radius: 8px;
 }
 button:hover {
   background-color: #45a049;
