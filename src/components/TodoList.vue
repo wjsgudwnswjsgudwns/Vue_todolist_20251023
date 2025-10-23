@@ -20,23 +20,26 @@ export default {
   list-style: none;
   padding: 0;
 }
+
 .todo-item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background-color: #f0f0f0;
+  background-color: rgb(229, 241, 241);
   padding: 10px;
   margin-bottom: 5px;
   border-radius: 5px;
 }
+
 .delete {
-  background-color: #e74c3c;
+  padding: 8px 16px;
+  background-color: rgb(252, 80, 74);
   color: white;
   border: none;
   cursor: pointer;
-  padding: 5px 8px;
+  border-radius: 4px;
 }
+
 .delete:hover {
-  background-color: #c0392b;
+  background-color: rgb(204, 19, 12);
 }
 </style>

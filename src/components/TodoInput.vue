@@ -13,18 +13,20 @@
 export default {
   data() {
     return {
-      newTodo: "", // 초기값
+      newTodo: "",
     };
   },
   methods: {
+    //이벤트 처리 함수 선언
     submitTodo() {
       if (this.newTodo.trim() === "") {
-        alert("할 일을 입력 하세요");
+        //참이면 공란 입력 불가!
+        alert("할일을 입력하세요!");
         return;
       } else {
         this.$emit("add-todo", this.newTodo);
-        //  상위 컴포넌트인 App의 addTodo 메소드의 인수로 newTodo 전달하여 호출
-        this.newTodo = ""; // newTodo 초기화 -> input 창 포기화
+        //상위 컴포넌트인 App의 addTodo 메서드의 인수로 newTodo 전달하며 호출
+        this.newTodo = ""; //newTodo 공백으로 초기화->input 입력창 공란으로 변경
       }
     },
   },
@@ -34,24 +36,28 @@ export default {
 <style>
 .todo-input {
   display: flex;
-  justify-content: center;
   gap: 10px;
+  justify-content: center;
   margin-bottom: 20px;
 }
+
 .todo-input input {
-  flex: 1;
-  padding: 8px;
-  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid rgb(116, 114, 114);
+  border-radius: 4px;
+  font-size: 16px;
 }
-button {
+
+.todo-input button {
   padding: 8px 16px;
-  background-color: #4caf50;
+  background-color: coral;
   color: white;
   border: none;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 4px;
 }
-button:hover {
-  background-color: #45a049;
+
+.todo-input button:hover {
+  background-color: rgb(221, 60, 2);
 }
 </style>
